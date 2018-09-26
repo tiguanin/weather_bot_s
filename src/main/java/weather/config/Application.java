@@ -30,7 +30,7 @@ public class Application {
     }
 
     @PostConstruct
-    private void botInitializer() {
+    private void botInitialize() {
         TelegramBotsApi botsApi = new TelegramBotsApi();
         try {
             botsApi.registerBot(bot);
