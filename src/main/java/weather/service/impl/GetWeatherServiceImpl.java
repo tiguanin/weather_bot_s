@@ -8,15 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import weather.mapping.FactualWeather;
 import weather.service.GetWeatherService;
 
 @Service
-@EnableScheduling
+//@EnableScheduling
 public class GetWeatherServiceImpl implements GetWeatherService {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(GetWeatherServiceImpl.class);
@@ -28,7 +26,7 @@ public class GetWeatherServiceImpl implements GetWeatherService {
     private String weatherToken;
 
     @Override
-    @Scheduled(fixedRate = 2000)
+    //@Scheduled(fixedRate = 2000)
     public FactualWeather getFactualWeather() {
         HttpHeaders headers = new HttpHeaders();
         headers.set("X-Yandex-API-Key", weatherToken);

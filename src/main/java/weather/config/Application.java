@@ -6,6 +6,7 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.telegram.telegrambots.ApiContextInitializer;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -43,6 +44,11 @@ public class Application {
     @Bean
     public Bot bot() {
         return new Bot();
+    }
+
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
     }
 
 
