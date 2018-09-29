@@ -46,6 +46,7 @@ public class Application {
         return new Bot();
     }
 
+    // for resolve ${} at @Value
     @Bean
     public static PropertySourcesPlaceholderConfigurer propertyPlaceholderConfigurer() {
         return new PropertySourcesPlaceholderConfigurer();
