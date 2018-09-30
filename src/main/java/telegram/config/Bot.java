@@ -36,7 +36,6 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage()) {
-            System.out.println(update.getMessage().getChat().getFirstName());
             if (!"/start".equals(update.getMessage().getText())) {
 //                forecastSenderService.sendMessageToInitiator(this.chatId, getWeatherService.getFactualWeather());
                 if (this.chatId != null) {
