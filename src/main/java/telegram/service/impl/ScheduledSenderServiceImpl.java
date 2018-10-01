@@ -21,7 +21,7 @@ public class ScheduledSenderServiceImpl implements ScheduledSenderService {
     Bot bot;
 
     @Override
-    @Scheduled(cron = "${api.yandex.weather.schedule.cron}")
+    @Scheduled(fixedRate = 3600000)
     public void sendScheduledMessage() {
         System.out.println(bot.getChatId());
         forecastSenderService.sendMessageToInitiator(bot.getChatId(), getWeatherService.getFactualWeather());
